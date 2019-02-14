@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:nbu_currency/presentation/app.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(App());
+
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
