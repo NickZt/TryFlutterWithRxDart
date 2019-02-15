@@ -18,13 +18,13 @@ class HomeBloc extends BaseBloc {
   }
 
   factory HomeBloc(ApiManager apiManager) {
-    final onVehiclesRequested = BehaviorSubject();
+    final onCurrenciesRequested = BehaviorSubject();
 
-    final state = onVehiclesRequested
+    final state = onCurrenciesRequested
         .switchMap<HomeState>((_) => _getCurrencies(apiManager))
         .startWith(HomeEmpty());
 
-    return HomeBloc._(onVehiclesRequested, state);
+    return HomeBloc._(onCurrenciesRequested, state);
   }
 
   static Stream<HomeState> _getCurrencies(ApiManager apiManager) async* {

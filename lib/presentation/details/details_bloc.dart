@@ -14,34 +14,34 @@ class DetailsBloc extends BaseBloc {
 
   final Stream<DetailsState> state;
 
-  factory DetailsBloc(ApiManager apiManager, CurrenciesResponse manufacturer) {
+  factory DetailsBloc(ApiManager apiManager, CurrenciesResponse currency) {
     final onDetailsRequested = BehaviorSubject();
 
     final state = onDetailsRequested
-        .switchMap((_) => _getManufacturerDetails(apiManager, manufacturer))
+        .switchMap((_) => _getCurrencyDetails(apiManager, currency))
         .startWith(DetailsEmpty());
 
     return DetailsBloc._(onDetailsRequested, state);
   }
 
-  static Stream<DetailsState> _getManufacturerDetails(
-      ApiManager apiManager, CurrenciesResponse manufacturer) async* {
+  static Stream<DetailsState> _getCurrencyDetails(
+      ApiManager apiManager, CurrenciesResponse currency) async* {
     yield DetailsLoading();
-
-    try {
-      print("manufacturer: $manufacturer");
+//in next step implement some visual shugar like currency image and lokal db scan
+//    try {
+//      print("manufacturer: $manufacturer");
       var result = new List<CurrenciesResponse>();
-      result.add(manufacturer);
+      result.add(currency);
 //      if (result.isNotEmpty) {
 
       yield DetailsPopulated(UnmodifiableListView(result));
 //      } else {
 //        yield DetailsEmpty();
 //      }
-    } catch (e, stacktrace) {
-      print(stacktrace);
-      yield DetailsError(e);
-    }
+//    } catch (e, stacktrace) {
+//      print(stacktrace);
+//      yield DetailsError(e);
+//    }
   }
 
   void reload() {

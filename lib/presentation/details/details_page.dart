@@ -22,6 +22,7 @@ class _DetailsState extends NavigationState<DetailsPage, DetailsBloc> {
 
   @override
   void initState() {
+    print("init state");
     bloc = DetailsBloc(Injector.getApiManager(), widget.data);
     super.initState();
   }
@@ -75,7 +76,7 @@ class _DetailsState extends NavigationState<DetailsPage, DetailsBloc> {
         title: Text(currency.cc ?? 'Unknown code',
             style: TextStyle(fontSize: 24.0)),
         children: <Widget>[
-          _createRow('exchange date: ${currency.exchangedate}'),
+          _createRow('exchange date: ${currency.exchangedate ?? "-"}'),
           _createRow('Currency name: ${currency.txt ?? "-"} '),
           _createRow('Currency code: ${currency.cc ?? "-"}'),
           _createRow(
