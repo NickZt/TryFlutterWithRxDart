@@ -36,6 +36,7 @@ class _HomePageState extends NavigationState<HomePage, HomeBloc> {
           initialData: HomeEmpty(),
           builder: (context, snapshot) {
             if (snapshot.data is HomePopulated)
+
               return ListView(
                 children: (snapshot.data as HomePopulated)
                     .result

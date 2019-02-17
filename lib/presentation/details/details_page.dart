@@ -36,6 +36,7 @@ class _DetailsState extends NavigationState<DetailsPage, DetailsBloc> {
       body: StreamBuilder(
           stream: bloc.state,
           builder: (context, snapshot) {
+            //todo list records from bd
             if (snapshot.data is DetailsPopulated)
               return ListView(
                 children: (snapshot.data as DetailsPopulated)
