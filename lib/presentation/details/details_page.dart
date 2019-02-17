@@ -73,14 +73,17 @@ class _DetailsState extends NavigationState<DetailsPage, DetailsBloc> {
       key: PageStorageKey(currency.r030),
       padding: const EdgeInsets.all(16.0),
       child: ExpansionTile(
-        title: Text(currency.cc ?? 'Unknown code',
+        title: Text(
+            currency.exchangedate + " " + currency.cc ??
+                currency.txt ??
+                currency.cc ??
+                'Unknown code',
             style: TextStyle(fontSize: 24.0)),
         children: <Widget>[
           _createRow('exchange date: ${currency.exchangedate ?? "-"}'),
           _createRow('Currency name: ${currency.txt ?? "-"} '),
           _createRow('Currency code: ${currency.cc ?? "-"}'),
-          _createRow(
-              'exchange rate: ${currency.rate ?? "-"} '),
+          _createRow('exchange rate: ${currency.rate ?? "-"} '),
         ],
       ),
     );

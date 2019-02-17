@@ -1,9 +1,9 @@
 import 'package:collection/collection.dart';
 import 'package:nbu_currency/model/currencies_response.dart';
-import 'package:nbu_currency/presentation/base/base_bloc.dart';
-import 'package:rxdart/rxdart.dart';
 import 'package:nbu_currency/network/api_manager.dart';
+import 'package:nbu_currency/presentation/base/base_bloc.dart';
 import 'package:nbu_currency/presentation/details/details_state.dart';
+import 'package:rxdart/rxdart.dart';
 
 class DetailsBloc extends BaseBloc {
   DetailsBloc._(this.onDetailsRequested, this.state) {
@@ -27,14 +27,13 @@ class DetailsBloc extends BaseBloc {
   static Stream<DetailsState> _getCurrencyDetails(
       ApiManager apiManager, CurrenciesResponse currency) async* {
     yield DetailsLoading();
-//in next step implement some visual shugar like currency image and lokal db scan
-//    try {
-//      print("manufacturer: $manufacturer");
-      var result = new List<CurrenciesResponse>();
-      result.add(currency);
+//in next step implement some visual shugar like currency image and local db scan
+
+    var result = new List<CurrenciesResponse>();
+    result.add(currency);
 //      if (result.isNotEmpty) {
 
-      yield DetailsPopulated(UnmodifiableListView(result));
+    yield DetailsPopulated(UnmodifiableListView(result));
 //      } else {
 //        yield DetailsEmpty();
 //      }

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:nbu_currency/presentation/home/home_page.dart';
+import 'package:nbu_currency/model/currencies_response.dart';
 import 'package:nbu_currency/presentation/details/details_page.dart';
+import 'package:nbu_currency/presentation/home/home_page.dart';
 
 class Screen {
   final Object data;
@@ -38,7 +39,8 @@ class NavigationUtils {
 
     if (screen is Details) {
       return DetailsPage(
-        title: screen.data,
+        title: (screen.data as CurrenciesResponse).exchangedate ??
+            (screen.data as CurrenciesResponse).txt,
         data: screen.data,
       );
     }

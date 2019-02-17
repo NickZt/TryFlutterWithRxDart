@@ -63,9 +63,8 @@ class _HomePageState extends NavigationState<HomePage, HomeBloc> {
       key: PageStorageKey(currency.r030),
       padding: const EdgeInsets.all(16.0),
       child: ExpansionTile(
-        title: Text(
-            currency.txt ?? '[no name]',
-            style: TextStyle(fontSize: 24.0)),
+        title:
+            Text(currency.txt ?? '[no name]', style: TextStyle(fontSize: 24.0)),
         children: <Widget>[
           Row(
             children: <Widget>[
@@ -75,14 +74,11 @@ class _HomePageState extends NavigationState<HomePage, HomeBloc> {
           Row(
             children: <Widget>[
               Flexible(
-                  child: _createLabel(
-                      'currency full name: ${currency.txt}'))
+                  child: _createLabel('currency full name: ${currency.txt}'))
             ],
           ),
           Row(
-            children: <Widget>[
-              _createLabel('currency rate: ${currency.rate}')
-            ],
+            children: <Widget>[_createLabel('currency rate: ${currency.rate}')],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
@@ -90,8 +86,7 @@ class _HomePageState extends NavigationState<HomePage, HomeBloc> {
               FlatButton(
                 child: Text('additional info'),
                 onPressed: () {
-                  bloc.navigateTo(Details(
-                      data: currency.txt ?? currency.cc));
+                  bloc.navigateTo(Details(data: currency));
                 },
                 textColor: Theme.of(context).primaryColor,
               )
