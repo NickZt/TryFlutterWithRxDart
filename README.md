@@ -1,12 +1,19 @@
 # nbu_currency
 
-TryFlutterWithRxDart
+## TryFlutterWithRxDart
 
-## Getting Started
 
-Хочу создать приложение для отображения курса валют.
+## Хочу создать приложение для отображения курса валют.
 
-Функциональность:
+### Зачем
+
+* изучить  dart & flutter
+* сравнить разработку на dart & flutter с Java Android 
+* попробовать разные виджеты и способы построения программы
+* запустить на iOS и Android
+
+
+### Функциональность:
 
 приложение раз в час в фоновом режиме синхронизирует внутренние данные с данными, расположенными по адресу: https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange- 
 приложение будет хранить внутренние данные в БД (sqllite).
@@ -28,11 +35,19 @@ exchange{        currency_id (внешний ключ на таблицу curren
 
 Добавить возможность сохранения в базу только изменившихся курсов
 
-в планах - протестировать это приложение в Android, iOs и развернуть в Интернете как сайт, ну и написать статью об этом.
+### в планах -  развернуть в Интернете как сайт, ну и написать статью об этом.
 
-I want to create an application to display exchange rates.
 
-Functionality:
+## I want to create an application to display exchange rates.
+
+### Goals
+
+* learn dart & flutter
+* evaluate dart & flutter vs my Android experience
+* try out different architectures, widgets, etc.
+* deploy on both iOS and Android
+
+### Functionality:
 
 the application once per hour in the background to synchronize internal data with the data located at: https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange-
 The application will store internal data in a database (sqllite).
@@ -40,7 +55,7 @@ DB structure and mapping to source xml:
 Currency table:
 currency {currency_id (r030) name (txt) code (cc)}
 
-Course Table:
+Exchange rate Table:
 exchange {currency_id (foreign key to currency table) (r030) exchange_date (exchangedate) exchange_rate (rate)}
 
 The application will be able to display data in portrait and landscape orientation.
@@ -53,7 +68,7 @@ In landscape orientation, 1/3 of the screen from the left edge takes a list of c
 Add the ability to select dates to display courses. The proposed database scheme allows you to store exchange rates data by date.
 Add the ability to save to the database only the changed exchange rate.
 
-Plans: test this application in Android, iOs and deploy on the Internet as a site, well, write an article about it.
+### Stretch Goals : deploy on the Internet as a site, well, write an article about it.
 
 
 
