@@ -37,6 +37,7 @@ exchange{        currency_id (внешний ключ на таблицу curren
 
 ### в планах -  развернуть в Интернете как сайт, ну и написать статью об этом.
 
+UPD https://nickzt.github.io/TryFlutterWithRxDart/
 
 ## I want to create an application to display exchange rates.
 
@@ -70,7 +71,7 @@ Add the ability to save to the database only the changed exchange rate.
 
 ### Stretch Goals : deploy on the Internet as a site, well, write an article about it.
 
-
+UPD https://nickzt.github.io/TryFlutterWithRxDart/
 
 For help getting started with Flutter, view our 
 [online documentation](https://flutter.io/docs), which offers tutorials, 
