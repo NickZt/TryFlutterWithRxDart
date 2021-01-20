@@ -12,19 +12,18 @@ class App extends StatefulWidget {
 }
 
 class _MyAppState extends State<App> {
-
 //  todo after debug period refactor databases to inject
   /// Reactive database wrapped around the SQflite database
   BriteDatabase _db;
 
   /// SQflite database
   Database _currency_database;
+
 //  Database _exchange_database;
 
   Stream stream;
   static const duration =
-  Duration(minutes: 1); //to test set 1 instead of 30 in normal
-
+      Duration(minutes: 1); //to test set 1 instead of 30 in normal
 
   /// Creates a database and create a  tables
   /// Contains columns id, name
@@ -34,9 +33,9 @@ class _MyAppState extends State<App> {
     var databasesPath = await getDatabasesPath();
     _currency_database = await openDatabase(databasesPath + "currency.db",
         version: 1, onCreate: (Database db, int version) async {
-          await db.execute(
-              'CREATE TABLE Exchange (currency_id INTEGER PRIMARY KEY,  name TEXT, code TEXT )');
-        });
+      await db.execute(
+          'CREATE TABLE Exchange (currency_id INTEGER PRIMARY KEY,  name TEXT, code TEXT )');
+    });
     return _currency_database;
   }
 
@@ -76,8 +75,6 @@ class _MyAppState extends State<App> {
 
   @override
   Widget build(BuildContext context) {
-
-
     return MaterialApp(
         title: 'NBU Rates',
         theme: ThemeData(
