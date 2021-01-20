@@ -3,7 +3,7 @@ import 'package:nbu_currency/common/injector.dart';
 import 'package:nbu_currency/model/currencies_response.dart';
 import 'package:nbu_currency/network/api_manager.dart';
 import 'package:nbu_currency/presentation/home/home_page.dart';
-import 'package:reactive_sqflite/reactive_database.dart';
+import 'package:sqlbrite/sqlbrite.dart';
 import 'package:sqflite/sqflite.dart';
 
 class App extends StatefulWidget {
@@ -15,7 +15,7 @@ class _MyAppState extends State<App> {
 
 //  todo after debug period refactor databases to inject
   /// Reactive database wrapped around the SQflite database
-  ReactiveDatabase _db;
+  BriteDatabase _db;
 
   /// SQflite database
   Database _currency_database;
@@ -45,7 +45,7 @@ class _MyAppState extends State<App> {
     _getSQfliteDatabase().then((Database database) {
       /// Wraps the created SQflite database with a ReactiveDatabase for reactive support
       setState(() {
-        _db = ReactiveDatabase.from(database, logging: true);
+        _db = BriteDatabase(database);
       });
     });
     print(" periodical task: ");
